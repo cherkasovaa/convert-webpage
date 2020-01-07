@@ -1,0 +1,519 @@
+@import "vars";
+
+@media all and (max-width: 1024px) {
+  .container {
+    max-width: 930px;
+    width: 90.8203%;
+  }
+
+  .header {
+    &__title {
+      margin-bottom: 35px;
+    }
+
+    &__sub-content {
+      max-width: 49%;
+      margin-bottom: 50px;
+    }
+  }
+
+  .form-contact {
+    padding-bottom: 30px;
+    margin-bottom: 44px;
+
+    &__adress,
+    &__name,
+    &__phone {
+      margin-bottom: 4px;
+    }
+
+    &__email,
+    &__user-name,
+    &__user-phone {
+      height: 43px;
+      margin-bottom: 26px;
+    }
+
+    &__user-phone {
+      margin-bottom: 29.5px;
+    }
+  }
+
+  .benefits {
+    padding: 70px 0;
+
+    &__text-wrapper {
+      max-width: 49%;
+    }
+
+    &__title {
+      font-size: $third-size;
+      letter-spacing: -1px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &__text:nth-child(2) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .card-wrapper {
+    max-width: 48.8%;
+  }
+
+  .card-benefit {
+    width: 46.6%;
+
+    &__image {
+      margin-bottom: 18px;
+    }
+
+    &:first-child &__image {
+      padding-left: 4px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__description {
+      line-height: 23px;
+    }
+  }
+
+  .features {
+    padding: 80px 0 70px;
+
+    &__title {
+      font-size: $third-size;
+      letter-spacing: -1.1px;
+      transform: translateX(-4px);
+      margin-bottom: 28px;
+    }
+
+    &__description {
+      max-width: 54%; //42%
+      margin-bottom: 61px; //60
+    }
+
+    &__img {
+      max-width: 57%;
+      margin-bottom: 96px;
+    }
+
+    &__list {
+      max-width: 34.4%;
+      margin-right: 0;
+      padding-top: 4px;
+
+      &-content {
+        &--no-hidden {
+          display: none;
+        }
+
+        &--hidden {
+          display: block;
+        }
+      }
+    }
+
+    &__item {
+      @each $icon, $value in $icons-array {
+        &--#{$icon}::before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: -50px;
+          width: 35px;
+          height: 35px;
+          background-image: url('../img/css_sprites.png');
+          background-position: $value;
+        }
+      }
+
+      &:nth-child(2) &-title {
+        padding-left: 13px;
+      }
+    }
+  }
+
+  .questions {
+    padding: 81px 0 14px;
+
+    &__title {
+      letter-spacing: -1.25px;
+    }
+
+    &__description {
+      letter-spacing: 0;
+    }
+
+    &__card {
+      max-width: 48.2%;
+      margin-bottom: 56px;
+
+      &:nth-child(even) {
+        margin-right: 0.5%;
+      }
+    }
+
+    &__question-title {
+      letter-spacing: 0;
+    }
+
+    &__answer {
+      letter-spacing: 0;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    max-width: 690px;
+    width: 89.84375%;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    &__title {
+      margin-bottom: 39px;
+    }
+
+    &__main-content {
+      font-size: $second-size;
+    }
+
+    &__sub-content {
+      font-size: $text-size-small;
+      max-width: 63%;
+    }
+  }
+
+  .form-contact {
+    margin-bottom: 70px;
+  }
+
+  .benefits {
+    padding: 60px 0;
+
+    &__text-wrapper {
+      max-width: 83%;
+    }
+
+    &__title {
+      max-width: 66%;
+      margin-bottom: 30px;
+    }
+
+    &__text:nth-child(2) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .card-wrapper {
+    max-width: 100%;
+    padding-top: 30px;
+  }
+
+  .card-benefit {
+    width: 48%;
+    justify-content: space-between;
+
+    &__image {
+      margin-bottom: 16px;
+    }
+
+    &:first-child &__image {
+      padding-left: 0;
+    }
+  }
+
+  .features {
+    padding: 70px 0 116px;
+
+    &__description {
+      max-width: 73%;
+      margin-bottom: 41px;
+    }
+
+    &__list-wrapper {
+      flex-direction: column;
+    }
+
+    &__img {
+      max-width: 100%;
+      height: 530px;
+      margin-bottom: 40px;
+      border-radius: 2px;
+    }
+
+    &__list {
+      max-width: 98%;
+      padding-left: 55px;
+
+      &-content {
+        &--no-hidden {
+          display: block;
+        }
+
+        &--hidden {
+          display: none;
+        }
+      }
+    }
+
+    &__item {
+      margin-bottom: 44px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @each $icon, $value in $icons-array {
+        &--#{$icon}::before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: -55px;
+          width: 35px;
+          height: 35px;
+          background-image: url('../img/css_sprites.png');
+          background-position: $value;
+        }
+      }
+
+      &:nth-child(2) &-title {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__image {
+      width: 50%;
+      flex: 1 1 50%;
+    }
+  }
+
+  .questions {
+    padding: 71px 0 30px;
+
+    &__title {
+      font-size: $third-size;
+      margin-bottom: 24px;
+      transform: translateX(-2px);
+    }
+
+    &__wrapper {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__description {
+      margin-bottom: 46px;
+    }
+
+    &__card {
+      max-width: 100%;
+      background: darken($white, 2.75);
+      padding: 12px 15px 0 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2) {
+        order: 2;
+      }
+
+      &:nth-child(4) {
+        order: 3;
+      }
+    }
+
+    &__question-title {
+      border: none;
+      border-radius: 3px;
+      width: 100%;
+      display: inline-block;
+    }
+
+    &__title-wrapper {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: 0;
+        width: 20px;
+        height: 2px;
+        background: $select;
+        transition: all 0.35s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: 0;
+        width: 20px;
+        height: 2px;
+        transform: rotate(90deg);
+        background: $select;
+        transition: all 0.35s;
+      }
+    }
+
+    &__answer {
+      max-height: 0;
+      padding: 0 1em;
+      transition: all 0.35s;
+    }
+
+    &__toggle:checked {
+      & + .questions__title-wrapper {
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(135deg);
+        }
+      }
+
+      & ~ .questions__answer {
+        width: 94%;
+        max-height: 100vh;
+        padding: 5px 0 16px 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .container {
+    max-width: 450px;
+    width: 93.75%;
+  }
+
+  .header {
+    &__title {
+      margin-top: 11px;
+      margin-bottom: 80px;
+    }
+
+    &__main-content {
+      max-width: 71%;
+      font-size: $third-size;
+      line-height: 38px;
+      text-align: center;
+      margin-bottom: 47px;
+    }
+
+    &__sub-content {
+      font-size: $text-size-small;
+      max-width: 78%;
+      margin-bottom: 98px;
+    }
+  }
+
+  .form-contact {
+    margin-bottom: 78px;
+  }
+
+  .benefits {
+    padding: 65px 0 14px;
+
+    &__text-wrapper {
+      max-width: 100%;
+    }
+
+    &__title {
+      max-width: 100%;
+    }
+  }
+
+  .card-wrapper {
+    width: 100%;
+    padding-top: 40px;
+    flex-direction: column;
+  }
+
+  .card-benefit {
+    width: 100%;
+    margin-bottom: 50px;
+
+    &__image {
+      margin-bottom: 7px;
+    }
+
+    &__title {
+      margin-bottom: 1px;
+    }
+  }
+
+  .features {
+    padding: 75px 0 65px;
+
+    &__title {
+      transform: translateX(-1px);
+    }
+
+    &__description {
+      max-width: 100%;
+      line-height: 25px;
+      margin-bottom: 50px;
+    }
+
+    &__img {
+      max-width: 100%;
+      height: 346px;
+      margin-bottom: 30px;
+    }
+
+    &__list {
+      max-width: 100%;
+      padding-left: 50px;
+    }
+
+    &__item {
+      @each $icon, $value in $icons-array {
+        &--#{$icon}::before {
+          left: -50px;
+        }
+      }
+
+      &-title {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .questions {
+    padding: 75px 0 45px;
+
+    &__description {
+      margin-bottom: 47px;
+    }
+
+    &__card {
+      padding: 12px 10px 0 10px;
+      margin-bottom: 20px;
+    }
+
+    &__toggle:checked {
+      & ~ .questions__answer {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,299 @@
+@import "reset";
+@import "vars";
+@import "color-matrix";
+@import "mixins";
+@import "extends";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1160px;
+  width: 96.6666%;
+}
+
+.header {
+  background: url('../img/Header.jpg') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+
+  &__title {
+    @include text-style(($third-size * 2), 700, $white);
+
+    font-family: $lucida-font;
+    margin-bottom: 59px;
+  }
+
+  &__main-content {
+    @include text-style($first-size, 400, $white);
+
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  &__sub-content {
+    @include text-style($text-size-large, 400, $white);
+
+    line-height: 27px;
+    max-width: 28%;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+.form-contact {
+  @extend %main-text-style;
+
+  background: $white;
+  width: 360px;
+  max-width: 93%;
+  padding: 27px 37px 29px 43px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 76px;
+  border-radius: 3px;
+
+  &__title {
+    @include text-style($text-size-large, 700, $select);
+
+    margin-bottom: 23px;
+    align-self: center;
+  }
+
+  &__adress,
+  &__name,
+  &__phone {
+    @extend %sub-title-section;
+
+    text-transform: none;
+    margin-bottom: 8px;
+  }
+
+  &__email,
+  &__user-name,
+  &__user-phone {
+    @include placeholder($default, $select);
+
+    margin-bottom: 27px;
+  }
+
+  &__user-phone {
+    margin-bottom: 30.5px;
+  }
+
+  &__button {
+    @include button($primary, $white);
+
+    margin-bottom: 0;
+  }
+}
+
+.benefits {
+  @extend %main-text-style;
+
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+
+  & .container {
+    @extend .container;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 39%;
+  }
+
+  &__title {
+    @extend %title-section;
+
+    line-height: 46px;
+    letter-spacing: -1.2px;
+    margin-bottom: 34px;
+  }
+
+  &__text:nth-child(2) {
+    margin-bottom: 25px;
+  }
+}
+
+.card-wrapper {
+  display: flex;
+  max-width: 48.3%;
+  justify-content: space-between;
+  padding-top: 11px;
+}
+
+.card-benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 46.4%;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    @extend %sub-title-section;
+
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    line-height: 25px;
+  }
+}
+
+.features {
+  @extend %main-text-style;
+  @extend %style-section;
+
+  padding: 111px 0 100px;
+  background: darken($white, 2.75);
+
+  &__title {
+    @extend %title-section;
+
+    letter-spacing: -1.2px;
+    margin-bottom: 28px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+    max-width: 42%;
+    text-align: center;
+  }
+
+  &__list-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img {
+    max-width: 49%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 41.9%;
+    margin-right: 14px;
+    padding-top: 12px;
+
+    &-content {
+      &--no-hidden {
+        display: block;
+      }
+
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @each $icon, $value in $icons-array {
+      &--#{$icon}::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -60px;
+        width: 35px;
+        height: 35px;
+        background-image: url('../img/css_sprites.png');
+        background-position: $value;
+      }
+    }
+
+    &-title {
+      @extend %sub-title-section;
+
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+
+  &__image {
+    width: 25%;
+    flex: 1 1 25%;
+  }
+}
+
+.questions {
+  @extend %main-text-style;
+  @extend %style-section;
+
+  padding: 111px 0 54px;
+  letter-spacing: -1.25px;
+
+  &__title {
+    @extend %title-section;
+
+    margin-bottom: 28px;
+  }
+
+  &__description {
+    margin-bottom: 57px;
+    letter-spacing: 0.1px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 48%;
+    margin-bottom: 45px;
+  }
+
+  &__question-title {
+    @extend %sub-title-section;
+
+    margin-bottom: 11px;
+    padding-right: 20px;
+    letter-spacing: 0.1px;
+    display: inline-block;
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__answer {
+    letter-spacing: -0.05px;
+  }
+}
+
+.footer {
+  @extend %main-text-style;
+
+  display: flex;
+  justify-content: center;
+  background: darken($white, 2.75);
+  padding: 22px 0 21px;
+}
+
+@import "media";

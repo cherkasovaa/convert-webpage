@@ -1,0 +1,29 @@
+@import "./color-matrix";
+@import "./vars";
+@import "./mixins";
+
+%title-section {
+  @include text-style($first-size, 700, $select);
+
+  font-family: $lucida-font;
+  margin-bottom: 20px;
+}
+
+%sub-title-section {
+  @include text-style($text-size-small, 500, $select);
+
+  text-transform: uppercase;
+}
+
+%main-text-style {
+  @include text-style($text-size-small, 400, $select);
+
+  line-height: 27px;
+}
+
+%style-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}

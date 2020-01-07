@@ -1,0 +1,60 @@
+@import "./color-matrix";
+@import "./vars";
+
+@mixin button($color-bg, $color-text) {
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 3px;
+  background: $color-bg;
+  color: $color-text;
+  box-shadow: 0 3px 4px 0 $grey-opacity;
+
+  &:hover,
+  &:active {
+    background: darken(desaturate($color-bg, 20.19), 8.63);
+  }
+
+  &:disabled {
+    background: darken(desaturate($color-bg, 20.19), 8.63);
+    opacity: 0.4;
+  }
+}
+
+@mixin placeholder($color-default, $selected) {
+  max-width: 280px;
+  width: 100%;
+  height: 38px;
+  padding: 12px 10px;
+  border: 1px solid $default;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+
+  &[placeholder] {
+    color: $color-default;
+    text-indent: 0;
+    transition: text-indent 0.3s ease;
+
+    &:focus {
+      color: $selected;
+      text-indent: 400px;
+      transition: text-indent 0.3s ease;
+    }
+  }
+
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  &:invalid {
+    border: 1px solid $error;
+  }
+}
+
+@mixin text-style($f-size, $f-weight, $f-color) {
+  font-family: $main-font;
+  font-weight: $f-weight;
+  font-size: $f-size;
+  color: $f-color;
+}
