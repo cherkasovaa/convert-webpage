@@ -9,4 +9,4 @@ The FAQ section in the mobile version turns into an accordion.
 - BEM
 
 ## Github Page
-[link](https://cherkasovaa.github.io/convert_webpage/)
+[link](https://cherkasovaa.github.io/convert-webpage/)
